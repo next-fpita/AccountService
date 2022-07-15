@@ -25,13 +25,15 @@ interface IRegister  {
 }
 
 class AccountRepository {
-	bbdd: Iregister[] = [];
+	bbdd: IRegister[] = [];
 }
 
 class AccountService {
 	constructor() {}
 
-	deposit(amount: number) {}
+	deposit(amount: number) {
+
+	}
 
 	withdraw(amount: number) {}
 
@@ -42,10 +44,19 @@ class AccountService {
 
 describe('Bank ', () => {
 	let accountService: AccountService
+	let accountRepository: AccountRepository
 	beforeEach(() => {
-		accountService = new AccountService(),
+		accountService = new AccountService();
 		accountRepository = new AccountRepository()
 	})
+
+	it( 'Should deposit an given amount', () => {
+		accountService.deposit(5);
+		const expectedBalance = 5;
+		const result = accountRepository.bbdd[accountRepository.bbdd.length - 1].balance;
+		
+		expect(result).toBe(expectedBalance)
+	});
 
 	it('Should Print statement with transaction ', () => {
 		const expectedStatement = `date || credit || debit || balance\n" +
