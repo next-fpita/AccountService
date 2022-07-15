@@ -1,0 +1,29 @@
+{
+  "name": "typescriptbasictest",
+  "version": "1.0.0",
+  "description": "Basic setup for a kata with typescript and jest",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nachogarcia/typescriptBasicTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nachogarcia/typescriptBasicTest/issues"
+  },
+  "homepage": "https://github.com/nachogarcia/typescriptBasicTest#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.2",
+    "typescript": "^4.6.4",
+    "husky": "^8.0.0"
+  }
+}
