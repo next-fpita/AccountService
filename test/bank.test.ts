@@ -18,6 +18,16 @@
 
 enum Roles {}
 
+interface IRegister  {
+	date: Date;
+	amount: number;
+	balance: number
+}
+
+class AccountRepository {
+	bbdd: Iregister[] = [];
+}
+
 class AccountService {
 	constructor() {}
 
@@ -33,7 +43,8 @@ class AccountService {
 describe('Bank ', () => {
 	let accountService: AccountService
 	beforeEach(() => {
-		accountService = new AccountService()
+		accountService = new AccountService(),
+		accountRepository = new AccountRepository()
 	})
 
 	it('Should Print statement with transaction ', () => {
